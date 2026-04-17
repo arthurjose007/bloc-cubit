@@ -5,9 +5,9 @@ import 'package:bloc_counter/todo_list/todo_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'counter_app_/bloc/counter_bloc.dart';
-import 'counter_app_/cubit/counter_state.dart';
-import 'counter_app_/home_bloc/home_page.dart';
+import 'counter_app_/counter_bloc/bloc/counter_bloc.dart';
+import 'counter_app_/cubit_counter/cubit/counter_state.dart';
+import 'counter_app_/counter_bloc/home_bloc/home_page.dart';
 import 'login_for_validation/login_screen.dart';
 
 
