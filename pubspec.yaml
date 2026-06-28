@@ -38,6 +38,8 @@ dependencies:
   flutter_bloc:
   equatable:
   flutter_svg:
+  intl:
+  http:
 
 dev_dependencies:
   flutter_test:
