@@ -1,3 +1,5 @@
+import 'package:bloc_counter/counter_app_/multipledatacount/cubit/multiplecubit.dart';
+import 'package:bloc_counter/counter_app_/multipledatacount/view/colorandcount.dart';
 import 'package:bloc_counter/login_for_validation/auth/auth_bloc.dart';
 import 'package:bloc_counter/todo_list/addTodopage.dart';
 import 'package:bloc_counter/todo_list/cubit/todo_cubit.dart';
@@ -34,17 +36,19 @@ class MyApp extends StatelessWidget {
               BlocProvider(create: (_) => CountCubit()),
               BlocProvider(create: (_) => TodoCubit()),
               BlocProvider(create: (_) => AuthBloc()),
+              BlocProvider(create: (_) => CountColorCubit()),
               BlocProvider(
                 create: (_) => WeatherBloc(context.read<WeatherRepository>()),
               ),
             ],
             child: MaterialApp(
-              initialRoute: '/weather',
+              initialRoute: '/councolor',
               routes: {
                 '/': (_) => LoginScreen(),
                 '/todo': (_) => TodoList(),
                 '/add-todo': (_) => AddTodoPage(),
                 '/weather': (_) => WeatherScreen(),
+                '/councolor': (_) => MultipleDataChange(),
               },
             ),
           );
