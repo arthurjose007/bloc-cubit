@@ -18,37 +18,48 @@ class MultipleDataChange extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            //when you use blocbuilder it will trigger when any variable change so unnessery call so use blocselector
             BlocBuilder<CountColorCubit, CountwithColor>(
               builder: (context, state) {
                 return Text(
-                  '$state',
+                  '${state.count}',
                   style: Theme.of(context).textTheme.headlineMedium,
                 );
               },
             ),
+            BlocSelector<CountColorCubit, CountwithColor, int>(
+              selector: (state) => state.count,
+              builder: (context, state) {
+                return Text(
+                  '${count}',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                );
+              },
+            ),
+            BlocSelector<CountColorCubit, CountwithColor, Color>(
+              selector: (state) => state.color,
+
+              builder: (context, state) {
+                return Text(
+                  '${color}',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                );
+              },
+            ),
+            ElevatedButton(
+              onPressed: () {
+                context.read<CountColorCubit>().increment();
+              },
+              child: const Icon(Icons.add),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                context.read<CountColorCubit>().randomcolorChange();
+              },
+              child: const Text("Random color Change"),
+            ),
           ],
         ),
-      ),
-      floatingActionButton: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-            heroTag: null,
-            onPressed: () {
-              context.read<CountColorCubit>().increment();
-            },
-            tooltip: 'Increment',
-            child: const Icon(Icons.add),
-          ),
-          FloatingActionButton(
-            heroTag: null,
-            onPressed: () {
-              context.read<CountColorCubit>().decrement();
-            },
-            tooltip: 'Decrement',
-            child: const Icon(Icons.minimize),
-          ),
-        ],
       ),
     );
     // },

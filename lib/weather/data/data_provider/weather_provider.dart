@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:bloc_counter/weather/widget/secrets.dart';
+//import 'package:bloc_counter/weather/widget/secrets.dart';
 import 'package:http/http.dart' as http;
 
 class WeatherDataProvider {
@@ -8,7 +8,8 @@ class WeatherDataProvider {
     try {
       final res = await http.get(
         Uri.parse(
-          'https://api.openweathermap.org/data/2.5/forecast?q=$cityName&APPID=$openWeatherAPIKey',
+          '',
+          //'https://api.openweathermap.org/data/2.5/forecast?q=$cityName&APPID=$openWeatherAPIKey',
         ),
       );
 

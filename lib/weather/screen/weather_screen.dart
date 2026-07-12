@@ -3,7 +3,6 @@ import 'dart:ui';
 import 'package:bloc_counter/weather/bloc/weather_bloc.dart';
 import 'package:bloc_counter/weather/widget/additional_info_item.dart';
 import 'package:bloc_counter/weather/widget/hourly_forecast_item.dart';
-import 'package:bloc_counter/weather/widget/secrets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';

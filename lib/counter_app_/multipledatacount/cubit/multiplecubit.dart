@@ -15,8 +15,8 @@ class CountwithColor {
   }
 }
 
-class CountCubit extends Cubit<CountwithColor> {
-  CountCubit() : super(CountwithColor(count: 0, color: Colors.blue));
+class CountColorCubit extends Cubit<CountwithColor> {
+  CountColorCubit() : super(CountwithColor(count: 0, color: Colors.blue));
 
   void increment() {
     // print("before $state");
